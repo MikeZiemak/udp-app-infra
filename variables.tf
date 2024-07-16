@@ -62,10 +62,3 @@ variable "SSH_KEYS" {
   default     = "admin-keys"
 }
 
-variable "SERVER_STARTUP_SCRIPT" {
-  description = "Startup script (needs to be explicitly base64 encoded to be used)"
-}
-
-variable "CLIENT_STARTUP_SCRIPT" {
-  description = "Startup script (needs to be explicitly base64 encoded to be used)"
-}

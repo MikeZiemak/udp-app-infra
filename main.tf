@@ -12,7 +12,6 @@ module "web" {
   CLIENT_PORT           = var.CLIENT_PORT
   CLIENT_IMAGE          = var.CLIENT_IMAGE
   SHARED_TAG            = var.SHARED_TAG
-  STARTUP_SCRIPT        = var.CLIENT_STARTUP_SCRIPT
 }
 
 module "server" {
@@ -25,6 +24,5 @@ module "server" {
   SERVER_PORT              = var.SERVER_PORT
   SERVER_IMAGE             = var.SERVER_IMAGE
   SHARED_TAG               = var.SHARED_TAG
-  STARTUP_SCRIPT           = var.SERVER_STARTUP_SCRIPT
 }
 
