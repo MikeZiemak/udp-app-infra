@@ -23,3 +23,23 @@ variable "SERVER_SECURITY_GROUP_ID" {
   type        = string
 }
 
+variable "SERVER_IMAGE" {
+  description = "Container registry URL (ECR, Dockerhub or otherwise) + image ref"
+}
+
+variable "SERVER_PORT" {
+  description = "Port used by the UDP app server"
+}
+
+variable "SHARED_TAG" {
+  description = "Tag shared by the client and server"
+}
+
+variable "SSH_KEYS" {
+  description = "SSH Keys used with the EC2 instances for admin purposes"
+  default     = "admin-keys"
+}
+
+variable "STARTUP_SCRIPT" {
+  description = "Startup script (needs to be explicitly base64 encoded to be used)"
+}

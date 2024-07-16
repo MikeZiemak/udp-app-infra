@@ -2,6 +2,7 @@ resource "aws_launch_template" "web" {
   name_prefix   = "web-"
   image_id      = var.AMI_ID
   instance_type = var.INSTANCE_TYPE
+  key_name      = var.SSH_KEYS
 
   network_interfaces {
     associate_public_ip_address = true
@@ -15,6 +16,8 @@ resource "aws_launch_template" "web" {
       Name = "web-instance"
     }
   }
+
+  user_data = base64encode(var.STARTUP_SCRIPT)
 }
 
 resource "aws_autoscaling_group" "web_asg" {

@@ -2,6 +2,7 @@ resource "aws_launch_template" "server" {
   name_prefix   = "server-"
   image_id      = var.AMI_ID
   instance_type = var.INSTANCE_TYPE
+  key_name      = var.SSH_KEYS
 
   network_interfaces {
     subnet_id       = var.PRIVATE_SUBNET_ID
@@ -15,6 +16,7 @@ resource "aws_launch_template" "server" {
     }
   }
 
+  user_data = base64encode(var.STARTUP_SCRIPT)
 }
 
 resource "aws_autoscaling_group" "server_asg" {
