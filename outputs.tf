@@ -15,10 +15,11 @@ output "PRIVATE_SUBNET_ID" {
 
 output "WEB_ASG_NAME" {
   description = "The name of the web auto scaling group"
-  value       = aws_autoscaling_group.web_asg.name
+  value       = module.web.WEB_ASG_NAME
 }
 
 output "SERVER_ASG_NAME" {
   description = "The name of the server auto scaling group"
-  value       = aws_autoscaling_group.server_asg.name
+  value       = module.server.SERVER_ASG_NAME
 }
+

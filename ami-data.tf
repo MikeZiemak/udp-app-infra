@@ -4,12 +4,12 @@ data "aws_ami" "latest_arm_ami" {
 
   filter {
     name   = "name"
-    values = ["amzn2-ami-hvm-*-arm64-gp2"]
+    values = ["debian-12-amd64-*"]
   }
 
   filter {
     name   = "architecture"
-    values = ["arm64"]
+    values = ["x86_64"]
   }
 
   filter {
